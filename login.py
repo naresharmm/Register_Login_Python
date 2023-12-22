@@ -75,7 +75,10 @@ class Users:
         with open('instruments.json', 'r', encoding='utf-8') as file:
             nat_instr = json.load(file)
 
-        if input_country not in nat_instr:
+        def cap_first_char(input_str):
+            print(input_str.capitalize())
+            
+        if cap_first_char(input_country) not in nat_instr:
             print("Country not found in the list.")
         else:
             print(f"{', '.join(nat_instr[input_country])}")
@@ -91,9 +94,9 @@ class Users:
 
             if chosen_instrument in available_instr:
                 if chosen_instrument in international_instruments_data:
-                    print(f"{', '.join(international_instruments_data[chosen_instrument])} has already chosen it")
+                    print(f"{international_instruments_data[chosen_instrument]} has already chosen it")
                 if phone not in international_instruments_data:
-                    international_instruments_data[chosen_instrument] = [phone]
+                    international_instruments_data[chosen_instrument] = phone
 
                 with open('international_instr.json', 'w', encoding='utf-8') as file:
                     json.dump(international_instruments_data, file, indent=4)
