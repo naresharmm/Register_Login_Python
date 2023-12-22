@@ -1,0 +1,15 @@
+{
+    "Armenia": ["dhol","zourna"],
+    "China": ["erhu", "guzheng", "pipa"],
+    "India": ["sitar", "tabla", "veena"],
+    "Iran" : ["tar","barbat","setar"],
+    "Italy" : ["mandolin"],
+    "Israel" : ["shofar"],
+    "Brazil": ["samba drums", "cavaquinho", "berimbau"],
+    "Spain": [ "castanets", "bandurria"],
+    "Greece" : ["bouzuki","lyre","trigonon"],
+    "Japan" : ["koto","horagai","taiko","kokyu"],
+    "Canada" : ["chakhe","roneat","skor daey","ploy"]
+   
+
+}
