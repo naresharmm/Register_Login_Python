@@ -62,7 +62,7 @@ class Users:
         if phone in self.login_data:
             print("Another account has registered this phone number")
             return
-        
+
         input_username = input("Create username: ")
         input_country = input("Which country are you from? ")
         encrypt_pass_val = self.encrypt_pass(password)
@@ -75,13 +75,10 @@ class Users:
         with open('instruments.json', 'r', encoding='utf-8') as file:
             nat_instr = json.load(file)
 
-        def cap_first_char(input_str):
-            print(input_str.capitalize())
-            
-        if cap_first_char(input_country) not in nat_instr:
-            print("Country not found in the list.")
+        if input_country.capitalize() in nat_instr:
+            print(f"{', '.join(nat_instr[input_country.capitalize()])}")
         else:
-            print(f"{', '.join(nat_instr[input_country])}")
+           print("Country not found on the list")
 
         instr_choice = input("Do you want to make an instrument global? ")
         if instr_choice == "yes":
@@ -97,7 +94,7 @@ class Users:
                     print(f"{international_instruments_data[chosen_instrument]} has already chosen it")
                 if phone not in international_instruments_data:
                     international_instruments_data[chosen_instrument] = phone
-
+ 
                 with open('international_instr.json', 'w', encoding='utf-8') as file:
                     json.dump(international_instruments_data, file, indent=4)
 
